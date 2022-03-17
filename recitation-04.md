@@ -1,7 +1,7 @@
 # CMPS 2200  Recitation 04
 
-**Name (Team Member 1):**_________________________  
-**Name (Team Member 2):**_________________________
+**Name (Team Member 1):** Ruoqin Ji 
+**Name (Team Member 2):** Dachen Ni
 
 
 In this lab you will practice using the `map` and `reduce` functions. These functions are commonly used together in a `map-reduce` framework, used by Google and others to parallelize and scale common computations.
@@ -38,6 +38,10 @@ To use this function to count words, you'll need to implement your own `map_f` a
 
 **Enter answer here**
 
+**Answer:** Since addition is $W(1)$, then the work of `word_count_reduce` for word appears `n` times is $W(n) = 2W(\frac{W}{2})+1 \in O(n)$, whereas its span is $S(n) = S(\frac{n}{2})+1 \in O(\lg n)$.
+
+![](image/recitation-04/1647462553186.png)
+
 
 5. Why are we going through all this trouble? Couldn't I just use this function to count words?
 
@@ -53,6 +57,8 @@ for doc in docs:
 What is the problem that prevents us from easily parallelizing this solution?
 
 **Enter answer here**
+
+**Answer:** This count-word function is completely sequential, i.e., it has to go thorugh every for loop steps. Such struture leaves no sapce for parallelism. 
 
 
 ## Part 2: Sentiment analysis
